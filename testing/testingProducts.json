@@ -1,0 +1,210 @@
+[
+  {
+    "title": "Samsung Galaxy S21",
+    "description": "Potente smartphone con cámara de alta resolución",
+    "code": "SGS21",
+    "price": 799,
+    "status": true,
+    "stock": 20,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/samsung-s21-1.jpg",
+      "https://example.com/samsung-s21-2.jpg"
+    ]
+  },
+  {
+    "title": "iPhone 13",
+    "description": "Último modelo de iPhone con pantalla OLED",
+    "code": "IP13",
+    "price": 999,
+    "status": true,
+    "stock": 15,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/iphone-13-1.jpg",
+      "https://example.com/iphone-13-2.jpg"
+    ]
+  },
+  {
+    "title": "Google Pixel 5",
+    "description": "Teléfono con enfoque en la fotografía y la experiencia Android",
+    "code": "GPX5",
+    "price": 699,
+    "status": true,
+    "stock": 32,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/google-pixel-5-1.jpg",
+      "https://example.com/google-pixel-5-2.jpg"
+    ]
+  },
+  {
+    "title": "OnePlus 9",
+    "description": "Dispositivo con rendimiento ágil y carga rápida",
+    "code": "OP9",
+    "price": 799,
+    "status": true,
+    "stock": 20,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/oneplus-9-1.jpg",
+      "https://example.com/oneplus-9-2.jpg"
+    ]
+  },
+  {
+    "title": "Xiaomi Mi 11",
+    "description": "Smartphone con potente procesador y cámara versátil",
+    "code": "XMI11",
+    "price": 649,
+    "status": true,
+    "stock": 16,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/xiaomi-mi-11-1.jpg",
+      "https://example.com/xiaomi-mi-11-2.jpg"
+    ]
+  },
+  {
+    "title": "Sony Xperia 5 III",
+    "description": "Teléfono con enfoque en multimedia y entretenimiento",
+    "code": "SXP5III",
+    "price": 999,
+    "status": true,
+    "stock": 23,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/sony-xperia-5-iii-1.jpg",
+      "https://example.com/sony-xperia-5-iii-2.jpg"
+    ]
+  },
+  {
+    "title": "Motorola Edge",
+    "description": "Dispositivo con pantalla envolvente y características destacadas",
+    "code": "MDR",
+    "price": 699,
+    "status": true,
+    "stock": 22,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/motorola-edge-1.jpg",
+      "https://example.com/motorola-edge-2.jpg"
+    ]
+  },
+  {
+    "title": "Realme GT",
+    "description": "Smartphone con alto rendimiento y carga rápida",
+    "code": "RLMGT",
+    "price": 499,
+    "status": true,
+    "stock": 28,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/realme-gt-1.jpg",
+      "https://example.com/realme-gt-2.jpg"
+    ]
+  },
+  {
+    "title": "LG Velvet",
+    "description": "Dispositivo con diseño atractivo y características multimedia",
+    "code": "LGVLT",
+    "price": 599,
+    "status": true,
+    "stock": 19,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/lg-velvet-1.jpg",
+      "https://example.com/lg-velvet-2.jpg"
+    ]
+  },
+  {
+    "title": "BlackBerry Key2",
+    "description": "Teléfono con teclado físico y enfoque en la seguridad",
+    "code": "BBK2",
+    "price": 549,
+    "status": true,
+    "stock": 10,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/blackberry-key2-1.jpg",
+      "https://example.com/blackberry-key2-2.jpg"
+    ]
+  },
+  {
+    "title": "Google Pixel 6",
+    "description": "El último buque insignia de Google con tecnología de cámara avanzada",
+    "code": "GPX6",
+    "price": 899,
+    "status": true,
+    "stock": 15,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/google-pixel-6-1.jpg",
+      "https://example.com/google-pixel-6-2.jpg"
+    ]
+  },
+  {
+    "title": "OnePlus 10 Pro",
+    "description": "Teléfono premium con características innovadoras y pantalla fluida",
+    "code": "OP10P",
+    "price": 1199,
+    "status": true,
+    "stock": 12,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/oneplus-10-pro-1.jpg",
+      "https://example.com/oneplus-10-pro-2.jpg"
+    ]
+  },
+  {
+    "title": "Xiaomi Redmi Note 10",
+    "description": "Smartphone asequible con pantalla AMOLED y gran duración de batería",
+    "code": "XRN10",
+    "price": 349,
+    "status": true,
+    "stock": 30,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/xiaomi-redmi-note-10-1.jpg",
+      "https://example.com/xiaomi-redmi-note-10-2.jpg"
+    ]
+  },
+  {
+    "title": "Sony Xperia 1 III",
+    "description": "Teléfono con enfoque profesional en fotografía y rendimiento potente",
+    "code": "SXP1III",
+    "price": 1099,
+    "status": true,
+    "stock": 18,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/sony-xperia-1-iii-1.jpg",
+      "https://example.com/sony-xperia-1-iii-2.jpg"
+    ]
+  },
+  {
+    "title": "Motorola Moto G Power",
+    "description": "Smartphone con una batería de larga duración para un uso intensivo",
+    "code": "MMGP",
+    "price": 249,
+    "status": true,
+    "stock": 25,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/motorola-moto-g-power-1.jpg",
+      "https://example.com/motorola-moto-g-power-2.jpg"
+    ]
+  },
+  {
+    "title": "Realme Narzo 30",
+    "description": "Smartphone para juegos con pantalla de alta frecuencia de actualización",
+    "code": "RN30",
+    "price": 279,
+    "status": true,
+    "stock": 20,
+    "category": "Smartphones",
+    "thumbnails": [
+      "https://example.com/realme-narzo-30-1.jpg",
+      "https://example.com/realme-narzo-30-2.jpg"
+    ]
+  }
+]
