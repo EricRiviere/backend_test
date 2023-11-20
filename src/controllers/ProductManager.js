@@ -14,15 +14,25 @@ class ProductManager {
   }
 
   getProducts = async () => {
-    let products = await fs.promises.readFile(this.path, "utf-8");
-    return JSON.parse(products);
+    try {
+      let products = await fs.promises.readFile(this.path, "utf-8");
+      return JSON.parse(products);
+    } catch (error) {
+      console.error("Error reading products file:", error);
+      throw new Error("Error reading products file");
+    }
   };
 
   writeProducts = async (products) => {
-    await fs.promises.writeFile(
-      this.path,
-      JSON.stringify(products, null, "\t")
-    );
+    try {
+      await fs.promises.writeFile(
+        this.path,
+        JSON.stringify(products, null, "\t")
+      );
+    } catch (error) {
+      console.error("Error writing products file:", error);
+      throw new Error("Error writing products file");
+    }
   };
 
   addProduct = async ({
@@ -35,54 +45,102 @@ class ProductManager {
     category,
     thumbnails,
   }) => {
-    let products = await this.getProducts();
-    let existingProduct = products.find((product) => product.code === code);
-    if (existingProduct) return "Error: existing product with provided code.";
-    let productId = nanoid(10);
-    let newProduct = {
-      id: productId,
-      title,
-      description,
-      price,
-      status,
-      stock,
-      category,
-      thumbnails,
-    };
-    products.push(newProduct);
-    await this.writeProducts(products);
-    return "Product added to products list.";
-  };
-
-  findProductById = async (id) => {
-    let products = await this.getProducts();
-    let productById = products.find((product) => product.id === id);
-    return productById;
+    try {
+      if (
+        !title ||
+        !description ||
+        !code ||
+        !price ||
+        !stock ||
+        !category ||
+        !thumbnails
+      ) {
+        throw new Error("Missing property");
+      }
+      let products = await this.getProducts();
+      let existingProduct = products.find((product) => product.code === code);
+      if (existingProduct) {
+        throw new Error("Existing product with provided code");
+      } else {
+        let productId = nanoid(10);
+        let newProduct = {
+          id: productId,
+          title,
+          description,
+          code,
+          price,
+          status,
+          stock,
+          category,
+          thumbnails,
+        };
+        products.push(newProduct);
+        await this.writeProducts(products);
+        return {
+          status: "success",
+          message: "Product added to products list.",
+        };
+      }
+    } catch (error) {
+      console.error("Error adding product:", error.message);
+      return { status: "error", error: error.message };
+    }
   };
 
   getProductById = async (id) => {
-    let product = await this.findProductById(id);
-    if (!product) return "Error: product not found.";
-    return product;
+    try {
+      let products = await this.getProducts();
+      let product = products.find((product) => product.id === id);
+      if (!product) {
+        throw new Error("Product not found");
+      }
+      return {
+        status: "success",
+        product,
+      };
+    } catch (error) {
+      console.error("Product not found:", error);
+      return { status: "error", error: error.message };
+    }
   };
 
   deleteProduct = async (id) => {
-    let products = await this.getProducts();
-    let product = await this.getProductById(id);
-    if (!product) return "Error: product not found";
-    let newProducts = products.filter((prod) => prod.id !== id);
-    await this.writeProducts(newProducts);
-    return "Product deleted from products list.";
+    try {
+      let products = await this.getProducts();
+      let product = await this.getProductById(id);
+      if (product.status === "error") {
+        throw new Error("Product not found");
+      }
+      let newProducts = products.filter((prod) => prod.id !== id);
+      await this.writeProducts(newProducts);
+      return {
+        status: "success",
+        message: "Product deleted from products list",
+      };
+    } catch (error) {
+      console.error(error.message);
+      return { status: "error", error: error.message };
+    }
   };
 
   updateProduct = async (id, newProduct) => {
-    let products = await this.getProducts();
-    let product = await this.getProductById(id);
-    if (!product) return "Error: product not found";
-    let newProducts = products.filter((prod) => prod.id !== id);
-    newProducts.push({ id, ...newProduct });
-    await this.writeProducts(newProducts);
-    return "Product updated in product list.";
+    try {
+      let products = await this.getProducts();
+      let product = await this.getProductById(id);
+      if (product.status === "error") {
+        throw new Error("Product not found");
+      }
+      let newProducts = products.filter((prod) => prod.id !== id);
+      newProducts.push({ id, ...newProduct });
+      await this.writeProducts(newProducts);
+      return {
+        status: "success",
+        message: "Product updated in product list",
+      };
+    } catch (error) {
+      console.error(error.message);
+      return { status: "error", error: error.message };
+    }
   };
 }
 
