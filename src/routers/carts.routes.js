@@ -15,7 +15,6 @@ CartRouter.get("/", async (req, res) => {
     console.error("Error getting carts:", error);
     res.status(500).json({ status: "error", Error: error });
   }
-  res.json(await manager.getCarts());
 });
 
 CartRouter.post("/", async (req, res) => {
