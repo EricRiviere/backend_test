@@ -1,0 +1,21 @@
+<div>
+  <h1>ENTER PRODUCT</h1>
+  <form>
+    <label for="product_title">Product title:</label>
+    <input type="text" id="product_title" name="product_title" />
+    <label for="product_title">Product description:</label>
+    <input type="text" id="product_description" name="product_description" />
+    <label for="product_title">Product price:</label>
+    <input type="number" id="product_price" name="product_price" />
+    <label for="product_title">Product stock:</label>
+    <input type="number" id="product_stock" name="product_stock" />
+    <label for="product_title">Product category:</label>
+    <input type="text" id="product_category" name="product_category" />
+    <button type="submit" id="button">Add Product</button>
+  </form>
+
+  <div id="productsList" class="product-grid"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/form.js"></script>
+</div>
