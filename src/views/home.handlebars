@@ -3,12 +3,14 @@
     <div class="product-card">
       <img src="" alt="" class="product-image" />
       <h2 class="product-title">{{this.title}}</h2>
+      <p>ID:{{this.id}}</p>
       <p class="product-description">{{this.description}}</p>
-      <p class="product-price">{{this.price}} $</p>
+      <p class="product-code">Code: {{this.code}}</p>
+      <p class="product-price">Price: {{this.price}} $</p>
+      <p class="product-status">Status: {{this.status}}</p>
       <p>Stock: {{this.stock}}</p>
       <p class="product-category">Category: {{this.category}}</p>
       <p>Images: {{this.thumbnails}}</p>
-      <button class="add-to-cart-button">Add to cart</button>
     </div>
   {{/each}}
 </div>

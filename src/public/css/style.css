@@ -38,7 +38,8 @@ h1 {
   margin-bottom: 10px;
 }
 
-.product-description {
+.product-description,
+.product-code {
   font-size: 14px;
   margin-bottom: 10px;
 }
@@ -50,13 +51,22 @@ h1 {
   margin-bottom: 10px;
 }
 
-.add-to-cart-button {
-  background-color: #28a745;
+.product-status {
+  font-size: 14px;
+  color: #28a745;
+}
+
+.delete-product {
+  background-color: #ed0a0a;
   color: #fff;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.delete-product:hover {
+  background-color: #640707;
 }
 
 .product-category {
@@ -69,13 +79,21 @@ h1 {
 
 form {
   font-family: Arial, sans-serif;
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-row {
+  flex-basis: calc(50% - 10px);
+  margin-bottom: 15px;
 }
 
 label {
@@ -87,7 +105,6 @@ label {
 input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
@@ -104,5 +121,5 @@ button {
 }
 
 button:hover {
-  background-color: #28a745;
+  background-color: #218838;
 }

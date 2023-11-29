@@ -5,6 +5,7 @@ import handlebars from "express-handlebars";
 import __dirname from "./utils.js";
 import { viewsRouter } from "./routers/views.routes.js";
 import { Server } from "socket.io";
+import { ProductManager } from "./controllers/ProductManager.js";
 
 const app = express();
 const PORT = 8080;
@@ -13,6 +14,8 @@ const httpServer = app.listen(PORT, () =>
 );
 
 const socketServer = new Server(httpServer);
+
+const manager = new ProductManager();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,25 +28,38 @@ app.set("views", `${__dirname}/views`);
 //Static
 app.use(express.static(`${__dirname}/public`));
 
+//Routers
 app.use("/api/products", ProductRouter);
 app.use("/api/carts", CartRouter);
 app.use("/", viewsRouter);
 
-//Array realTimeProducts
-const realTimeProducts = [];
-
 //Socket
-socketServer.on("connection", (socketClient) => {
+socketServer.on("connection", async (socketClient) => {
   console.log("Nuevo cliente conectado");
   socketClient.on("message", (data) => {
     console.log(data);
   });
   //Form
-  socketClient.on("form_message", (data) => {
+  socketClient.on("form_message", async (data) => {
     console.log(data);
-    realTimeProducts.push(data);
-    socketClient.emit("products_list", realTimeProducts);
+    await manager.addProduct(data);
+
+    const updatedProducts = await manager.getProducts();
+
+    socketServer.emit("products_list", updatedProducts);
   });
 
-  socketClient.emit("products_list", realTimeProducts);
+  socketClient.on("delete_product", async (productId) => {
+    try {
+      await manager.deleteProduct(productId);
+
+      const updatedProducts = await manager.getProducts();
+
+      socketServer.emit("products_list", updatedProducts);
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+  socketClient.emit("products_list", await manager.getProducts());
 });

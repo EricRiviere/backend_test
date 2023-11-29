@@ -1,17 +1,39 @@
 <div>
   <h1>ENTER PRODUCT</h1>
-  <form>
-    <label for="product_title">Product title:</label>
-    <input type="text" id="product_title" name="product_title" />
-    <label for="product_title">Product description:</label>
-    <input type="text" id="product_description" name="product_description" />
-    <label for="product_title">Product price:</label>
-    <input type="number" id="product_price" name="product_price" />
-    <label for="product_title">Product stock:</label>
-    <input type="number" id="product_stock" name="product_stock" />
-    <label for="product_title">Product category:</label>
-    <input type="text" id="product_category" name="product_category" />
-    <button type="submit" id="button">Add Product</button>
+  <form method="post">
+    <div class="form-row">
+      <label for="product_title">Product title:</label>
+      <input type="text" id="product_title" name="product_title" />
+    </div>
+    <div class="form-row">
+      <label for="product_description">Product description:</label>
+      <input type="text" id="product_description" name="product_description" />
+    </div>
+    <div class="form-row">
+      <label for="product_code">Product code:</label>
+      <input type="text" id="product_code" name="product_code" />
+    </div>
+    <div class="form-row">
+      <label for="product_price">Product price:</label>
+      <input type="number" id="product_price" name="product_price" />
+    </div>
+    <div class="form-row">
+      <label for="product_status">Product status:</label>
+      <input type="" id="product_status" name="product_status" />
+    </div>
+    <div class="form-row">
+      <label for="product_stock">Product stock:</label>
+      <input type="number" id="product_stock" name="product_stock" />
+    </div>
+    <div class="form-row">
+      <label for="product_category">Product category:</label>
+      <input type="text" id="product_category" name="product_category" />
+    </div>
+    <div class="form-row">
+      <label for="product_thumbnails">Product thumbnails:</label>
+      <input type="text" id="product_thumbnails" name="product_thumbnails" />
+    </div>
+    <button type="submit" id="form-button">Add Product</button>
   </form>
 
   <div id="productsList" class="product-grid"></div>

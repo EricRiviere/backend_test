@@ -13,10 +13,12 @@ viewsRouter.get("/", async (req, res) => {
   });
 });
 
-viewsRouter.get("/realtimeproducts", (req, res) => {
+viewsRouter.get("/realtimeproducts", async (req, res) => {
+  let products = await manager.getProducts();
   res.render("realTimeProducts", {
     title: "Real Time Products",
     cssFile: "style.css",
+    products: products,
   });
 });
 
